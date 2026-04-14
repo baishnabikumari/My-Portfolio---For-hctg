@@ -1,0 +1,97 @@
+/*All these color combinations i have used here is from the color grid which i will mention in README once i done with coding part.*/
+:root{
+    --bg: #4A4A4A;
+    --bg2: #5a5a5a;
+    --bg3: #686868;
+    --surface: #5a5a5a;
+    --surface2: #686868;
+
+    /*i will update these in future may be*/
+    --border: #7a7a7a;
+    --border-h: #a0a0a0;
+
+    --text-1: #FFFEE3;
+    --text-2: #CBCBCB;
+    --text-3: #d8d8d8;
+
+    --accent: #6D8196;
+    --accent-dark: #57687a;
+    --accent-bg: rgba(109, 129, 150, 0.12);
+    --accent-border: rgba(109, 129, 150, 0.28);
+    --accent-rgb: 109, 129, 150;
+
+    --hc-red: #ff6b6b;
+    --green: #7fd38a;
+
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-body: 'Instrument Sans', system-ui, sans-serif;
+
+    --r-sm: 6px;
+    --r-md: 12px;
+    --r-lg: 16px;
+    --r-xl: 24px;
+
+    --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+    --transition-slow:0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+[data-theme="light"]{/*for light theme*/
+    --bg: #FFFEE3;
+    --bg2: #f4f1d6;
+    --bg3: #e7e2bf;
+    --surface: #FFFEE3;
+    --surface2: #f4f1d6;
+
+    --border: #d7d1a8;
+    --border-h: #b7b08a;
+
+    --text-1: #4A4A4A;
+    --text-2: #6b6b6b;
+    --text-3: #8a8a8a;
+
+    --accent: #6D8196;
+    --accent-dark: #5c7084;
+    --accent-bg: rgba(109, 129, 150, 0.08);
+    --accent-border: rgba(109, 129, 150, 0.2);
+    --accent-rgb: 109, 129, 150;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {scroll-behavior: smooth;}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text-1);
+    line-height: hidden;
+    transition: background var(--transition-slow), color var(--transition-slow);
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection{
+    background: rgba(var(--accent-rgb), .25);
+    color: var(--text-1);
+}
+
+@media (hover: hover) and (pointer: fine){
+    body, .btn, .nav-hamburger, .switch, #hc-cursor{
+        cursor: none;
+    }
+}
+
+@media (hover: none), (pointer: coarse){
+    #hc-cursor{
+        display: none;
+    }
+}
