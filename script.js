@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     const themeCheckbox = document.getElementById('themeCheckbox');
-    const switchEl = document.getElementById('switchEl');
-    const themeTransition = document.getElementById('theme-Transition');
+    const switchEl = document.getElementById('themeSwitch');
+    const themeTransition = document.getElementById('theme-transition');
     const marquee = document.getElementById('marquee');
     const heroStats = document.querySelector('.hero-stats');
     const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
     const mobileLinks = Array.from(document.querySelectorAll('.mobile-link'));
-    const prefersReduceMotion = window.matchMedia('(prefers-reduce-motion: reduce)').matches;
+    const prefersReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const supportHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     const safeLocalStorage = {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mobileNav.contains(event.target) || hamburger.contains(event.target)) return;
             closeMobileMenu();
         });
-        document.addEventListener('click', (event) => {
+        document.addEventListener('keydown', (event) => {
             if(event.key === 'Escape') closeMobileMenu();
         });
     }
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const revealElements = document.querySelectorAll('.reveal, .fade-up');
 
-    if('intersectionObserver' in window && !prefersReduceMotion){
+    if('IntersectionObserver' in window && !prefersReduceMotion){
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting){
@@ -212,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(event){
             const href = this.getAttribute('href');
+            const target = document.querySelector(href);
             if(!target) return;
 
             event.preventDefault();
@@ -237,15 +238,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     if(entry.isIntersecting) setActive(entry.target.id);
                 });
             }, {threshold: 0.45});
-            observer.observe(section);
+            observe.observe(section);
         });
 
-        const current = document.querySelector('section[id');
+        const current = document.querySelector('section[id]');
         if(current) setActive(current.id);
     }
     if(marquee && marquee.parentElement){
         marquee.parentElement.addEventListener('mouseenter', () => {
-            marquee.parentElement.style.animationPlayState = "paused";
+            marquee.style.animationPlayState = "paused";
         });
         marquee.parentElement.addEventListener('mouseleave', () => {
             marquee.style.animationPlayState = 'running';
