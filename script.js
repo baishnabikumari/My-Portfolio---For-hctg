@@ -201,6 +201,84 @@ document.addEventListener('DOMContentLoaded', () => {
                 statsObserver.disconnect();
             });
         }, {threshold: 0.5});
-    }
 
-})
+        statsObserver.observe(heroStats);
+    } else {
+        statsTarget.forEach(el => {
+            if(!el) return;
+            el.textContent = `${el.dataset.target || ''}${el.dataset.suffix || ''}`;
+        });
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(event){
+            const href = this.getAttribute('href');
+            if(!target) return;
+
+            event.preventDefault();
+            const offset = nav?.offsetHeight || 60;
+            const top = target.getBoundingClientRect().top + window.scroll - offset;
+            
+            window.scrollTo({
+                top,
+                behavior: prefersReduceMotion ? 'auto' : 'smooth'
+            });
+            closeMobileMenu();
+        });
+    });
+    if('IntersectionObserver' in window && navLinks.length){
+        const setActive = (id) => {
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+        };
+        document.querySelectorAll('section[id]').forEach(section => {
+            const observe = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) setActive(entry.target.id);
+                });
+            }, {threshold: 0.45});
+            observer.observe(section);
+        });
+
+        const current = document.querySelector('section[id');
+        if(current) setActive(current.id);
+    }
+    if(marquee && marquee.parentElement){
+        marquee.parentElement.addEventListener('mouseenter', () => {
+            marquee.parentElement.style.animationPlayState = "paused";
+        });
+        marquee.parentElement.addEventListener('mouseleave', () => {
+            marquee.style.animationPlayState = 'running';
+        });
+    }
+    if (supportHover && !prefersReduceMotion){
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', function(event){
+                const rect = this.getBoundingClientRect();
+                const x = (event.clientX - rect.left) / rect.width - 0.5;
+                const y = (event.clientY - rect.top) / rect.height - 0.5;
+                this.style.transform = `translateY(-4px) rotateX(${-y * 3}deg) rotateY(${x * 3}deg)`;
+            });
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = '';
+            });
+        });
+    }
+    if ('IntersectionObserver' in window && !prefersReduceMotion){
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting){
+                    const delay = (parseInt(entry.target.style.getPropertyValue('--si'), 10) || 0) * 80;
+                    setTimeout(() => entry.target.classList.add('visible'), delay);
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.1});
+        document.querySelectorAll('.skill-card').forEach(card => skillObserver.observe(card));
+    } else {
+        document.querySelectorAll('.skill-card').forEach(card => card.classList.add('visible'));
+    }
+    console.log('%c Baishnabi Kumari', 'background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;font-weight:600;font-size:14px;padding:4px 12px;border-radius:6px;');
+    console.log('%c Hack Club YSWS ⚬ India ', 'color:#8b949e;font-size:12px;');
+
+});
