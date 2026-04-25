@@ -217,8 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             event.preventDefault();
             const offset = nav?.offsetHeight || 60;
-            const top = target.getBoundingClientRect().top + window.scroll - offset;
-            
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        
             window.scrollTo({
                 top,
                 behavior: prefersReduceMotion ? 'auto' : 'smooth'
