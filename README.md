@@ -74,10 +74,6 @@ So, this is my personal webiste - built entirely from scratch as part of a YSWS 
 
 ---
 
-## Projects Featured
-
----
-
 ## Tech Used
 - **HTML5**
 - **CSS3**
