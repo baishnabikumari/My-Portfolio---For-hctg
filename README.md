@@ -4,17 +4,22 @@
 ---
 
 # ScreenShots
+<img width="1440" height="706" alt="Screenshot 2026-04-27 at 4 24 27 PM" src="https://github.com/user-attachments/assets/73e87d49-5669-4e90-8489-9cf2995f77e4" />
+<img width="1440" height="706" alt="Screenshot 2026-04-27 at 4 24 36 PM" src="https://github.com/user-attachments/assets/0ee85ff0-4d2b-4cc6-9dee-c36b8520cf78" />
+<img width="1440" height="710" alt="Screenshot 2026-04-27 at 4 24 50 PM" src="https://github.com/user-attachments/assets/a08c8fc7-0751-49b8-88a7-79585d21dacb" />
+<img width="1440" height="707" alt="Screenshot 2026-04-27 at 4 24 58 PM" src="https://github.com/user-attachments/assets/98b55b84-e9e0-44f9-a316-4e04692a0fcb" />
 
 # Demo video
+https://github.com/user-attachments/assets/04620a38-3694-4306-a686-941600a3a7a7
 
 ---
 
 ## About this project
 So, this is my personal webiste - built entirely from scratch as part of a YSWS **HackClub The GAME** - Every animation, interaction and design decisions was made by hand.
 
-**Live at →**
+**Live at →** baishnabikumari.github.io/My-Portfolio---For-hctg/
 
-**Repo →**
+**Repo →** https://github.com/baishnabikumari/My-Portfolio---For-hctg/
 
 ---
 
