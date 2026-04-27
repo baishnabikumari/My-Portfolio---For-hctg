@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/04620a38-3694-4306-a686-941600a3a7a7
 ## About this project
 So, this is my personal webiste - built entirely from scratch as part of a YSWS **HackClub The GAME** - Every animation, interaction and design decisions was made by hand.
 
-**Live at →** baishnabikumari.github.io/My-Portfolio---For-hctg/
+**Live at →** https://baishnabikumari.github.io/My-Portfolio---For-hctg/
 
 **Repo →** https://github.com/baishnabikumari/My-Portfolio---For-hctg/
 
