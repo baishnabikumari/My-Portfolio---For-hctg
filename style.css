@@ -133,8 +133,8 @@ a {
 }
 
 #hc-cursor.is-hover {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     filter: invert(1) brightness(2) drop-shadow(0 4px 10px rgba(0,0,0,0.5));
 }
 
