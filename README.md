@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/04620a38-3694-4306-a686-941600a3a7a7
 ---
 
 ## About this project
-So, this is my personal webiste - built entirely from scratch as part of a YSWS **HackClub The GAME** - Every animation, interaction and design decisions was made by hand.
+So, this is my personal webiste - built entirely from scratch as part of a YSWS **https://macondo.hackclub.com/** - Every animation, interaction and design decisions was made by me.
 
 **Live at →** https://baishnabikumari.github.io/My-Portfolio---For-hctg/
 
@@ -96,6 +96,6 @@ open index.html
 
 or use Live Server in VS code.
 
-> This project is open source. But please do not copy it as you own portfolio. This portfolio is built as a part of a YSWS.
+> This project is open source. But please do not copy it as you own portfolio. This portfolio is built to submit it in https://macondo.hackclub.com/dashboard.
 
 *Build with ❤️ By baishuuu.*
